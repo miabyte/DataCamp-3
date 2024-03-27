@@ -20,8 +20,10 @@ import numpy as np
 np.random.seed(123)
 all_walks = []
 
-# Simulate random walk 250 times
-for i in range(250) :
+# Comment was "Simulate random walk 250 times" but it gives errors and fixes itself to 20 , also added line 25
+# Simulate random walk 20 times
+all_walks = []
+for i in range(20) :
     random_walk = [0]
     for x in range(100) :
         step = random_walk[-1]
@@ -34,7 +36,7 @@ for i in range(250) :
             step = step + np.random.randint(1,7)
 
         # Implement clumsiness
-        if np.random.rand() <= 0.001 :
+        if np.random.rand() <= 0.005 :
             step = 0
 
         random_walk.append(step)
